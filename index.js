@@ -11,6 +11,10 @@ app.use(express.static("public"));
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello from the Webtech Payment Service!");
+});
+
 app.post("/create-checkout-session", async (req, res) => {
   console.log("Connecting with Stripe...");
 
